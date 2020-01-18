@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Sound Around</title>
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Custom Stylesheet -->
+    <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <!--**********************************
+      Main wrapper start
+  ***********************************-->
+    <div id="main-wrapper">
+        <!-- Sidebar -->
+        <ul class="navbar-nav sidebar" id="accordionSidebar">
+            <!-- Sidebar Brand -->
+            <li>
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                    <span class="sidebar-brand-icon mx-2">
+                    <img src="assets/images/logo-small.png" class="img-fluid" alt="">
+                </span>
+                    <span class="sidebar-brand-text mx-3"><img src="assets/images/logo.png" class="img-fluid" alt=""></span>
+                </a>
+            </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item ">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-th-large"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-upload"></i>
+                    <span>Uploader</span>
+                </a>
+            </li>
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-truck"></i>
+                    <span>Shipping Quote</span>
+                </a>
+            </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+            <!-- Main Content -->
+            <div id="content">
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand topbar">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggle" class="btn btn-bars p-0">
+            <i class="fas fa-bars"></i>
+          </button>
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav rightNavbar ml-auto">
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img class="img-profile rounded-circle" src="assets/images/userImg.jpg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
+                                </a>
+                                <div class="dropdown-divider mt-0 mb-0"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    <!-- Page Heading -->
+                    <div class="title">
+                        <h1>Shipping Quote</h1>
+                    </div>
+                    <!-- Card Content -->
+                    <div class="card card-default">
+                        <!-- Tabs -->
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="listmodel-tab" data-toggle="tab" href="#listmodel" role="tab" aria-controls="listmodel" aria-selected="true">Single or List of Model no.</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="importcsv-tab" data-toggle="tab" href="#importcsv" role="tab" aria-controls="importcsv" aria-selected="false">Import CSV</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="importmanual-tab" data-toggle="tab" href="#importmanual" role="tab" aria-controls="importmanual" aria-selected="false">Input/Import Manual Dims</a>
+                            </li>
+                        </ul>
+                        <div class="card-body">
+                            <!-- Tab Content -->
+                            <div class="tab-content" id="myTabContent">
+                                <!-- Single or List of Model no. -->
+                                <div class="tab-pane fade show active" id="listmodel" role="tabpanel" aria-labelledby="listmodel-tab">
+                                    <!-- Zone Field -->
+                                    <div class="row field-row">
+                                        <div class="col-lg-6 col-first">
+                                            <div class="form-group form-group-flex align-items-center">
+                                                <label for="" class="form-label">Select Ship-to-Zone</label>
+                                                <div class="form-input">
+                                                    <select class="form-control">
+                                                      <option>Zone 1</option>
+                                                      <option>Zone 2</option>
+                                                      <option>Zone 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Zone Field -->
+                                    <div class="row field-row">
+                                        <div class="col-lg-6 col-first">
+                                            <div class="form-group form-group-flex">
+                                                <label for="" class="form-label form-label-textarea">Model Number</label>
+                                                <div class="form-input">
+                                                    <div class="form-control resizeno bootstrap-tagsinput"><span class="tag">AZPSUFM1240P<span class="remove"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-or">
+                                            <div class="orTxt align-items-center d-flex"><span>or</span></div>
+                                        </div>
+                                        <div class="col-lg-6 col-last">
+                                            <div class="form-group form-group-flex">
+                                                <label for="" class="form-label form-label-textarea">List Model Number</label>
+                                                <div class="form-input">
+                                                    <textarea class="form-control resizeno">
+                                 
+                                </textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="row">
+                                        <div class="col-sm-12 form-button text-center mt-3">
+                                            <button class="btn btn-primary">Get Shipping Rate <img src="assets/images/button-arrow.svg"  alt="" class="ml-2 icon" /><img src="assets/images/button-arrow-hover.svg" class="ml-2 icon-hover" alt=""   /></button>
+                                        </div>
+                                    </div>
+
+                                    <!-- tabel Data Section -->
+                                    <div class="resultSection">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h2>Export of Negotiated Rates</h2>
+                                            <a href="#" class="btn btn-primary btn-sm ml-auto"><img src="assets/images/export-icon.svg" alt="" class="mr-2 icon" /> <img src="assets/images/export-icon-hover.svg" alt="" class="mr-2 icon-hover" /> Export</a>
+                                        </div>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-default table-hover mb-0">
+                                                <thead>
+                                                    <tr>
+                                                        <th class="text-left">Model</th>
+                                                        <th>UPS Ground</th>
+                                                        <th> UPS Surepost</th>
+                                                        <th>USPS FC</th>
+                                                        <th>USPS Priority</th>
+                                                        <th>Depth</th>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                        <th>Weight</th>
+                                                        <th>Land</th>
+                                                        <th>Case</th>
+                                                        <th>Comments</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="text-left">AZPSUFM1240P</td>
+                                                        <td>$35.02</td>
+                                                        <td>$15.53</td>
+                                                        <td>$N/A</td>
+                                                        <td>$13.45</td>
+                                                        <td>15.75</td>
+                                                        <td>7.28</td>
+                                                        <td>19.29</td>
+                                                        <td>48.82</td>
+                                                        <td>$61.24</td>
+                                                        <td>$61.24</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">AZPSUFM1240P</td>
+                                                        <td>$10.8</td>
+                                                        <td>$15.53</td>
+                                                        <td>$N/A</td>
+                                                        <td>$13.45</td>
+                                                        <td>15.75</td>
+                                                        <td>7.28</td>
+                                                        <td>19.29</td>
+                                                        <td>48.82</td>
+                                                        <td>$61.24</td>
+                                                        <td>$61.24</td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="text-left">AZPSUFM1240P</td>
+                                                        <td>$10.8</td>
+                                                        <td>$15.53</td>
+                                                        <td>$N/A</td>
+                                                        <td>$13.45</td>
+                                                        <td>15.75</td>
+                                                        <td>7.28</td>
+                                                        <td>19.29</td>
+                                                        <td>48.82</td>
+                                                        <td>$61.24</td>
+                                                        <td>$61.24</td>
+                                                        <td></td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- //table Data Section -->
+
+                                </div>
+                                <!-- Import CSV -->
+                                <div class="tab-pane fade" id="importcsv" role="tabpanel" aria-labelledby="importcsv-tab">
+                                    <!-- Zone Field -->
+                                    <div class="row field-row">
+                                        <div class="col-md-6 col-first">
+                                            <div class="form-group form-group-flex align-items-center">
+                                                <label for="" class="form-label">Select Ship-to-Zone</label>
+                                                <div class="form-input">
+                                                    <select class="form-control">
+                                    <option>Zone 1</option>
+                                    <option>Zone 2</option>
+                                    <option>Zone 3</option>
+                                  </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Zone Field -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="uploadfile d-flex flex-row justify-content-center">
+                                                    <div class="file-select d-flex flex-column justify-content-center flex-wrap">
+                                                        <div class="file-message" id="fileName"></div>
+                                                        <div class="file-select-name" id="noFile">Upload Files to Get Rates</div>
+                                                        <input type="file" name="chooseFile" id="chooseFile">
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <a href="#" class="link">Sample CSV Files</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Button -->
+                                    <div class="row">
+                                        <div class="col-sm-12 form-button text-center mt-3">
+                                            <button class="btn btn-primary">Get Shipping Rate <img src="assets/images/button-arrow.svg"  alt="" class="ml-2 icon" /><img src="assets/images/button-arrow-hover.svg" class="ml-2 icon-hover" alt=""   /></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Input/Import Manual Dims -->
+                                <div class="tab-pane fade" id="importmanual" role="tabpanel" aria-labelledby="importmanual-tab">
+                                    <!-- Zone Field -->
+                                    <div class="row field-row">
+                                        <div class="col-md-6 col-first">
+                                            <div class="form-group form-group-flex align-items-center">
+                                                <label for="" class="form-label">Select Ship-to-Zone</label>
+                                                <div class="form-input">
+                                                    <select class="form-control">
+                                    <option>Zone 1</option>
+                                    <option>Zone 2</option>
+                                    <option>Zone 3</option>
+                                  </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Zone Field -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <div class="uploadfile d-flex flex-row justify-content-center">
+                                                    <div class="file-select d-flex flex-column justify-content-center flex-wrap">
+                                                        <div class="file-message" id="fileName"></div>
+                                                        <div class="file-select-name" id="noFile">Upload Files to Get Rates</div>
+                                                        <input type="file" name="chooseFile" id="chooseFile">
+                                                    </div>
+                                                </div>
+                                                <div class="text-right">
+                                                    <a href="#" class="link">Sample CSV Files</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- tabel Data Section -->
+                                    <div class="resultSection">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <h2>Input Manual Dims Table</h2>
+                                            <button class="btn  btn-primary btn-sm ml-auto" type="button"><i class="fas fa-plus mr-2"></i> Add new row</button>
+                                        </div>
+                                        <div class="table-responsive">
+
+
+                                            <table class="table table-bordered table-default mb-0 table-text-left">
+                                                <thead>
+                                                    <tr>
+                                                        <th width="238">Name</th>
+                                                        <th>Length</th>
+                                                        <th>Width</th>
+                                                        <th>Height</th>
+                                                        <th>Weight</th>
+                                                        <th width="170">Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><input type="text" class="form-control" /></td>
+                                                        <td><input type="text" class="form-control" /></td>
+                                                        <td><input type="text" class="form-control" /></td>
+                                                        <td><input type="text" class="form-control" /></td>
+                                                        <td><input type="text" class="form-control" /></td>
+                                                        <td>
+                                                            <a href="#" class="btn btn-info btn-action-icon"><i class="fas fa-check"></i></a>
+                                                            <a href="#" class="btn btn-danger btn-action-icon"><i class="fas fa-trash-alt"></i></a>
+                                                        </td>
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <!-- //table Data Section -->
+
+                                    <!-- Button -->
+                                    <div class="row">
+                                        <div class="col-sm-12 form-button text-center mt-3">
+                                            <button class="btn btn-primary">Get Shipping Rate <img src="assets/images/button-arrow.svg"  alt="" class="ml-2 icon" /><img src="assets/images/button-arrow-hover.svg" class="ml-2 icon-hover" alt=""   /></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"></div>
+
+                        </div>
+
+
+
+                    </div>
+                    <!-- //Card Content -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer text-center">© 2019 Sound Around</footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+    </div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+Scripts
+***********************************-->
+    <!-- jQuery CDN Link -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/custom.min.js"></script>
+    <!-- Bootstrap TabCollapse-->
+    <script type="text/javascript" src="assets/js/accordion.js"></script>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            getAccordion("#myTab", 768);
+        });
+    </script>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-36251023-1']);
+        _gaq.push(['_setDomainName', 'jqueryscript.net']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+</body>
+
+</html>
